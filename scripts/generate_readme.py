@@ -1,4 +1,10 @@
-# 📦 OptiChain Analytics: Proactive Delivery Delay Risk Prediction & Dynamic SLA Decision Support System
+# 文件路径: scripts/generate_readme.py
+import os
+
+def generate_enhanced_readme():
+    B = chr(96) * 3  # 定义反引号变量，避免与 Markdown 外部代码块标记产生语法冲突
+    
+    content = f"""# 📦 OptiChain Analytics: Proactive Delivery Delay Risk Prediction & Dynamic SLA Decision Support System
 *An Empirical Study on Brazilian E-Commerce (Olist Dataset)*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -47,25 +53,25 @@ All models are evaluated on a **strict out-of-sample temporal test set (last 20%
 
 ---
 
-## 💼 Managerial Decision Support: Cost-Sensitive Optimization ($\tau^* = 0.83$)
+## 💼 Managerial Decision Support: Cost-Sensitive Optimization ($\\tau^* = 0.83$)
 In actual e-commerce operations, decision consequences are fundamentally asymmetric:
-* **False Negative ($C_{FN} = R\$ 50$):** Unannounced delay leads to severe customer dispute, arbitration, and churn.
-* **False Positive ($C_{FP} = R\$ 8$):** Premature buffer warning adds slight conservative margin to SLA.
+* **False Negative ($C_{{FN}} = R\\$ 50$):** Unannounced delay leads to severe customer dispute, arbitration, and churn.
+* **False Positive ($C_{{FP}} = R\\$ 8$):** Premature buffer warning adds slight conservative margin to SLA.
 
-```
+{B}
 Total Expected Cost = (C_FN × FN) + (C_FP × FP)
-```
+{B}
 
 <p align="center">
   <img src="outputs/figures/cost_threshold_curve.png" width="750" alt="Cost Optimization Curve">
 </p>
 
-* **Standard Default Threshold ($\tau = 0.50$):** Total Expected Loss = **R$ 96,420**
-* **Optimal Business Threshold ($\tau^* = 0.83$):** Total Expected Loss = **R$ 75,768**
+* **Standard Default Threshold ($\\tau = 0.50$):** Total Expected Loss = **R$ 96,420**
+* **Optimal Business Threshold ($\\tau^* = 0.83$):** Total Expected Loss = **R$ 75,768**
 * **Net Financial Savings:** **21.42% reduction** in post-order dispute expenditure.
 
 ### 🛡️ Robustness Check: Scenario Sensitivity Matrix
-| Scenario | Cost Ratio ($C_{FN} / C_{FP}$) | Optimal $\tau^*$ | Default Cost | Optimized Cost | Net Savings (%) |
+| Scenario | Cost Ratio ($C_{{FN}} / C_{{FP}}$) | Optimal $\\tau^*$ | Default Cost | Optimized Cost | Net Savings (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Mild Dispute (Off-peak)** | 3.0 : 1 | 0.74 | R$ 68,140 | R$ 56,210 | **17.51%** |
 | **Baseline Core (Normal)** | 6.25 : 1 | 0.83 | R$ 96,420 | R$ 75,768 | **21.42%** |
@@ -89,19 +95,26 @@ Rather than leaving predictions in a black box, TreeSHAP decomposes delay risks 
 
 ## 🖥️ Executive Decision Cockpit (Streamlit Architecture)
 The repository includes a decision-support dashboard (`app/streamlit_app.py`) for management simulation:
-```bash
+{B}bash
 streamlit run app/streamlit_app.py
-```
+{B}
 * **Real-time Order Risk Score:** Instant delay probability scoring upon checkout.
-* **Cost Matrix Simulator:** Dynamic slider tuning for $C_{FN}$ and $C_{FP}$ with live financial ROI curves.
+* **Cost Matrix Simulator:** Dynamic slider tuning for $C_{{FN}}$ and $C_{{FP}}$ with live financial ROI curves.
 * **SHAP Patient Diagnosis:** Single-order waterfall attribution explaining root cause of alert.
 
 ---
 
 ## 🚀 Quick Reproduction
-```bash
+{B}bash
 # 1. Run Full End-to-End Pipeline
 python src/01_feature_engineering.py
 python src/02_model_training.py
 python src/03_xai_and_decision_support.py
-```
+{B}
+"""
+    with open("README.md", "w", encoding="utf-8") as f:
+        f.write(content.strip())
+    print("✅ 根目录 README.md 已全面翻新生成成功！")
+
+if __name__ == "__main__":
+    generate_enhanced_readme()

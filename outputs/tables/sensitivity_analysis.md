@@ -1,0 +1,5 @@
+| Scenario                          |   Cost Ratio (FN/FP) |   Optimal Threshold (tau*) | Default Cost (BRL)   | Optimized Cost (BRL)   | Loss Reduction   |
+|:----------------------------------|---------------------:|---------------------------:|:---------------------|:-----------------------|:-----------------|
+| Mild Complaint (C_FN=30, C_FP=10) |                  3   |                       0.36 | R$ 30,520            | R$ 30,260              | 0.85%            |
+| Baseline Core (C_FN=50, C_FP=8)   |                  6.2 |                       0.28 | R$ 50,676            | R$ 49,114              | 3.08%            |
+| Peak Season (C_FN=80, C_FP=6)     |                 13.3 |                       0.14 | R$ 80,932            | R$ 62,830              | 22.37%           |
