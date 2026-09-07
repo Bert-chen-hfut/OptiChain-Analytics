@@ -1,0 +1,6 @@
+Model,Accuracy,Balanced Accuracy,Recall (Delay),Precision,ROC-AUC,PR-AUC
+Heuristic Baseline (Rule),0.8374,0.4962,0.1146,0.0498,0.358,0.0438
+Logistic Regression (L1),0.6009,0.7028,0.8168,0.0999,0.7706,0.1708
+Random Forest,0.7436,0.5368,0.3056,0.0686,0.6186,0.0752
+LightGBM,0.6209,0.644,0.6699,0.0893,0.7151,0.1245
+XGBoost (Fine-tuned),0.6495,0.6092,0.5642,0.0836,0.6642,0.0977
